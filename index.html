@@ -423,18 +423,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.3) 0%, transparent 50%),
+            background: url('hero-bg.png') center/cover no-repeat,
+                        radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.3) 0%, transparent 50%),
                         radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
                         var(--color-background-deep-indigo);
-            background-size: 200% 200%;
+            background-size: cover, 200% 200%, 200% 200%, 100%;
             animation: gradient-shift 15s ease infinite alternate;
-            filter: blur(50px); /* Creates the mesh effect */
+            opacity: 0.6;
             z-index: 0;
         }
 
         @keyframes gradient-shift {
             0% { background-position: 0% 0%; }
             100% { background-position: 100% 100%; }
+        }
+
+        @keyframes wave {
+            0%, 100% { height: 8px; }
+            50% { height: 36px; }
         }
 
         .hero-content {
@@ -1084,6 +1090,18 @@
             <div class="hero-content animate-on-scroll" data-animate="fade-in-up">
                 <h1 class="gradient-text">Your Voice, Amplified by AI.</h1>
                 <h3>Transform how you communicate, operate, and connect. VocalPro delivers precision voice AI solutions for the modern professional.</h3>
+                <!-- Animated Voice Waveform -->
+                <div style="display:flex;align-items:center;justify-content:center;gap:3px;height:40px;margin:24px 0;">
+                    <div class="wave-bar" style="width:3px;background:var(--color-primary-modern-blue);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-primary-modern-blue);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.1s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-accent-vibrant-gold);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.2s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-primary-modern-blue);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.3s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-accent-vibrant-gold);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.4s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-primary-modern-blue);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.5s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-accent-vibrant-gold);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.6s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-primary-modern-blue);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.7s;"></div>
+                    <div class="wave-bar" style="width:3px;background:var(--color-primary-modern-blue);border-radius:2px;animation:wave 1.2s ease-in-out infinite;animation-delay:0.8s;"></div>
+                </div>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Get Started Today</a>
                     <a href="#features" class="btn btn-secondary">Learn More</a>
@@ -1261,7 +1279,7 @@
                     <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
                         <p class="quote body-large">"VocalPro has revolutionized how my team manages patient records. The accuracy is astounding, and we've cut documentation time by nearly 40%, allowing us to focus more on patient care. Truly indispensable."</p>
                         <div class="testimonial-author">
-                            <img loading="lazy" src="https://via.placeholder.com/60/4A90E2/E0E0E0?text=JD" alt="Dr. Jane Doe">
+                            <img loading="lazy" src="https://api.dicebear.com/7.x/personas/svg?seed=jane&backgroundColor=4A90E2" alt="Dr. Jane Doe">
                             <div class="author-info">
                                 <h4>Dr. Jane Doe</h4>
                                 <p class="body-small text-muted">Chief of Staff, Evergreen Medical Group</p>
@@ -1271,7 +1289,7 @@
                     <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
                         <p class="quote body-large">"As a custom furniture maker, my hands are always busy. VocalPro's voice commands let me control my tools, access blueprints, and even order materials without ever breaking my workflow. It's a game-changer for productivity."</p>
                         <div class="testimonial-author">
-                            <img loading="lazy" src="https://via.placeholder.com/60/FFD700/1A1A2E?text=MK" alt="Mark Kincaid">
+                            <img loading="lazy" src="https://api.dicebear.com/7.x/personas/svg?seed=mark&backgroundColor=FFD700" alt="Mark Kincaid">
                             <div class="author-info">
                                 <h4>Mark Kincaid</h4>
                                 <p class="body-small text-muted">Master Craftsman, Kincaid Woodworks</p>
@@ -1281,7 +1299,7 @@
                     <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.3">
                         <p class="quote body-large">"Implementing VocalPro was seamless. Our nurses now spend less time on administrative tasks and more time with patients. The secure, compliant platform gives us peace of mind, and the support has been exceptional."</p>
                         <div class="testimonial-author">
-                            <img loading="lazy" src="https://via.placeholder.com/60/8D99AE/1A1A2E?text=SA" alt="Sarah Adams">
+                            <img loading="lazy" src="https://api.dicebear.com/7.x/personas/svg?seed=sarah&backgroundColor=8D99AE" alt="Sarah Adams">
                             <div class="author-info">
                                 <h4>Sarah Adams</h4>
                                 <p class="body-small text-muted">Clinic Administrator, Harmony Health</p>
@@ -1291,7 +1309,7 @@
                     <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.4">
                         <p class="quote body-large">"From inventory management to quality control, VocalPro has integrated perfectly into our manufacturing process. The ability to log data and trigger actions by voice has drastically improved our operational efficiency."</p>
                         <div class="testimonial-author">
-                            <img loading="lazy" src="https://via.placeholder.com/60/4A90E2/E0E0E0?text=RT" alt="Robert Thompson">
+                            <img loading="lazy" src="https://api.dicebear.com/7.x/personas/svg?seed=robert&backgroundColor=4A90E2" alt="Robert Thompson">
                             <div class="author-info">
                                 <h4>Robert Thompson</h4>
                                 <p class="body-small text-muted">Operations Manager, Precision Engineering</p>
@@ -1510,7 +1528,7 @@
             const counterObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const target = parseInt(entry.target.dataset.counterTarget);
+                        const target = parseFloat(entry.target.dataset.counterTarget);
                         const duration = 2000; // 2 seconds
                         const start = 0;
                         let startTime = null;
