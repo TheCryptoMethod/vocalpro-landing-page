@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocalPro - Elevate Your Voice with AI</title>
+    <meta name="description" content="VocalPro offers cutting-edge Voice AI solutions tailored for craftsmen and healthcare professionals. Enhance communication, streamline operations, and deliver unparalleled clarity.">
+    <meta name="keywords" content="Voice AI, AI for craftsmen, AI for healthcare, voice technology, professional communication, VocalPro, speech recognition, natural language processing">
+    <meta name="author" content="VocalPro Agency">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vocalpro.com/">
+    <meta property="og:title" content="VocalPro - Elevate Your Voice with AI">
+    <meta property="og:description" content="VocalPro offers cutting-edge Voice AI solutions tailored for craftsmen and healthcare professionals. Enhance communication, streamline operations, and deliver unparalleled clarity.">
+    <meta property="og:image" content="https://www.vocalpro.com/social-share.jpg"> <!-- Replace with actual image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.vocalpro.com/">
+    <meta property="twitter:title" content="VocalPro - Elevate Your Voice with AI">
+    <meta property="twitter:description" content="VocalPro offers cutting-edge Voice AI solutions tailored for craftsmen and healthcare professionals. Enhance communication, streamline operations, and deliver unparalleled clarity.">
+    <meta property="twitter:image" content="https://www.vocalpro.com/social-share.jpg"> <!-- Replace with actual image -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎤</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Design System Variables */
+        :root {
+            /* Colors */
+            --color-background-deep-indigo: #1A1A2E;
+            --color-primary-modern-blue: #4A90E2;
+            --color-secondary-cool-gray: #8D99AE;
+            --color-accent-vibrant-gold: #FFD700;
+            --color-text-light: #E0E0E0;
+            --color-text-muted: #A0A0A0;
+            --color-success-positive: #28A745;
+            --color-error-warning: #DC3545;
+
+            /* Typography */
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+
+            /* Spacing Scale */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 32px;
+            --space-xl: 64px;
+            --space-xxl: 96px;
+            --space-xxxl: 128px;
+
+            /* Border Radius */
+            --radius-small: 4px;
+            --radius-medium: 8px;
+            --radius-large: 12px;
+            --radius-full: 50%;
+
+            /* Shadow Styles */
+            --shadow-subtle: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            --shadow-medium: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0px 12px 30px rgba(0, 0, 0, 0.4);
+            --shadow-inner: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+            /* Transitions */
+            --transition-duration-fast: 0.2s;
+            --transition-duration-standard: 0.3s;
+            --transition-duration-slow: 0.4s;
+            --transition-easing: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+        }
+
+        /* Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-light);
+            background-color: var(--color-background-deep-indigo);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        }
+
+        a {
+            color: var(--color-primary-modern-blue);
+            text-decoration: none;
+            transition: color var(--transition-duration-fast) var(--transition-easing);
+        }
+
+        a:hover {
+            color: var(--color-accent-vibrant-gold);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--color-text-light);
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+        }
+
+        h1 { font-size: 36px; font-weight: 700; line-height: 1.2; }
+        h2 { font-size: 28px; font-weight: 700; line-height: 1.25; }
+        h3 { font-size: 24px; font-weight: 600; line-height: 1.3; }
+        h4 { font-size: 20px; font-weight: 600; line-height: 1.35; }
+        .body-large { font-size: 16px; font-weight: 400; line-height: 1.6; }
+        .body-regular { font-size: 15px; font-weight: 400; line-height: 1.6; }
+        .body-small { font-size: 14px; font-weight: 400; line-height: 1.6; }
+        .caption { font-size: 12px; font-weight: 400; line-height: 1.5; }
+
+        /* Responsive Typography */
+        @media (min-width: 768px) {
+            h1 { font-size: 48px; }
+            h2 { font-size: 36px; }
+            h3 { font-size: 28px; }
+            h4 { font-size: 24px; }
+            .body-large { font-size: 18px; }
+            .body-regular { font-size: 16px; }
+            .body-small { font-size: 15px; }
+            .caption { font-size: 13px; }
+        }
+
+        @media (min-width: 1024px) {
+            h1 { font-size: 64px; }
+            h2 { font-size: 48px; }
+            h3 { font-size: 36px; }
+            h4 { font-size: 28px; }
+            .body-large { font-size: 20px; }
+            .body-regular { font-size: 18px; }
+            .body-small { font-size: 16px; }
+            .caption { font-size: 14px; }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .text-center { text-align: center; }
+        .text-muted { color: var(--color-text-muted); }
+        .text-primary { color: var(--color-primary-modern-blue); }
+        .text-accent { color: var(--color-accent-vibrant-gold); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-medium);
+            font-family: var(--font-heading);
+            font-size: 15px; /* Mobile */
+            font-weight: 600;
+            line-height: 1;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-duration-standard) var(--transition-easing);
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        }
+        @media (min-width: 768px) { .btn { font-size: 16px; } }
+        @media (min-width: 1024px) { .btn { font-size: 18px; } }
+
+        .btn-primary {
+            background-color: var(--color-accent-vibrant-gold);
+            color: var(--color-background-deep-indigo);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-medium);
+            filter: brightness(1.1);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: var(--shadow-subtle);
+            filter: brightness(0.9);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary-modern-blue);
+            border: 2px solid var(--color-primary-modern-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(74, 144, 226, 0.1); /* 10% opacity of primary */
+            color: var(--color-text-light);
+            border-color: var(--color-text-light);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0) scale(0.98);
+            background-color: rgba(74, 144, 226, 0.05);
+        }
+
+        /* Glassmorphism Card Base */
+        .glass-card {
+            background-color: rgba(26, 26, 46, 0.4); /* Background color with transparency */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(141, 153, 174, 0.2); /* Secondary color with transparency */
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-subtle);
+            transition: all var(--transition-duration-standard) var(--transition-easing);
+            padding: var(--space-lg);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--color-primary-modern-blue) 0%, var(--color-accent-vibrant-gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Scroll Animation Base */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-duration-slow) var(--transition-easing),
+                        transform var(--transition-duration-slow) var(--transition-easing);
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(26, 26, 46, 0.8); /* Semi-transparent background */
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            padding: var(--space-md) 0;
+            box-shadow: var(--shadow-subtle);
+            transition: background-color var(--transition-duration-standard) var(--transition-easing),
+                        box-shadow var(--transition-duration-standard) var(--transition-easing);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .logo svg {
+            height: 28px;
+            width: 28px;
+            fill: var(--color-primary-modern-blue);
+            transition: fill var(--transition-duration-fast) var(--transition-easing);
+        }
+
+        .logo:hover svg {
+            fill: var(--color-accent-vibrant-gold);
+        }
+
+        .nav-menu {
+            display: none; /* Hidden by default on mobile */
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-menu a {
+            color: var(--color-text-muted);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            padding: var(--space-xs) 0;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary-modern-blue);
+            transition: width var(--transition-duration-fast) var(--transition-easing);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a.active {
+            color: var(--color-text-light);
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-text-light);
+            border-radius: 2px;
+            transition: all var(--transition-duration-standard) var(--transition-easing);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-background-deep-indigo);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-lg);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-duration-standard) var(--transition-easing),
+                        visibility var(--transition-duration-standard) var(--transition-easing);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 28px;
+            font-family: var(--font-heading);
+            color: var(--color-text-light);
+            transition: color var(--transition-duration-fast) var(--transition-easing);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--color-primary-modern-blue);
+        }
+
+        @media (min-width: 768px) {
+            .hamburger, .mobile-menu {
+                display: none;
+            }
+            .nav-menu {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            padding-top: var(--space-xxl); /* Account for fixed header */
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                        var(--color-background-deep-indigo);
+            background-size: 200% 200%;
+            animation: gradient-shift 15s ease infinite alternate;
+            filter: blur(50px); /* Creates the mesh effect */
+            z-index: 0;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: var(--space-lg);
+        }
+
+        .hero h1 {
+            font-size: 48px; /* Mobile */
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 64px; } }
+
+        .hero h3 {
+            font-size: 20px; /* Mobile */
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) { .hero h3 { font-size: 28px; } }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            justify-content: center;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+        }
+
+        /* Section Base */
+        .section {
+            padding: var(--space-xl) 0; /* Mobile */
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 768px) { .section { padding: var(--space-xxl) 0; } }
+        @media (min-width: 1024px) { .section { padding: var(--space-xxxl) 0; } }
+
+        .section-title {
+            margin-bottom: var(--space-xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Subtle Grid/Dot Pattern Overlay */
+        .section-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--color-secondary-cool-gray) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            padding: var(--space-lg);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-card .icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: var(--space-md);
+            color: var(--color-primary-modern-blue);
+            font-size: 48px; /* For emoji icons */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card h3 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .feature-card p {
+            color: var(--color-text-muted);
+            font-size: var(--body-regular);
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            align-items: stretch; /* Ensure cards stretch to same height */
+        }
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .pricing-card {
+            padding: var(--space-xl);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--radius-large);
+        }
+
+        .pricing-card.highlight {
+            border: 2px solid var(--color-primary-modern-blue);
+            background-color: rgba(74, 144, 226, 0.1);
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-5px); /* Lift slightly even without hover */
+        }
+        .pricing-card.highlight:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: var(--space-sm);
+            font-size: 32px; /* Mobile */
+        }
+        @media (min-width: 768px) { .pricing-card h3 { font-size: 36px; } }
+
+        .price {
+            font-size: 48px; /* Mobile */
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: var(--space-xs);
+        }
+        @media (min-width: 768px) { .price { font-size: 64px; } }
+
+        .price .currency {
+            font-size: 0.5em;
+            color: var(--color-text-muted);
+            align-self: flex-start;
+            margin-top: var(--space-xs);
+        }
+
+        .price .period {
+            font-size: 0.3em;
+            color: var(--color-text-muted);
+            align-self: flex-end;
+            margin-bottom: var(--space-xs);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: var(--space-xl);
+            flex-grow: 1; /* Push button to bottom */
+        }
+
+        .pricing-card ul li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            color: var(--color-text-light);
+            font-size: var(--body-regular);
+        }
+
+        .pricing-card ul li svg {
+            color: var(--color-success-positive);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: auto; /* Align button at the bottom */
+        }
+
+        .pricing-card.highlight .btn-primary {
+            background-color: var(--color-primary-modern-blue);
+            color: var(--color-text-light);
+        }
+        .pricing-card.highlight .btn-primary:hover {
+            background-color: var(--color-accent-vibrant-gold);
+            color: var(--color-background-deep-indigo);
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .testimonial-card {
+            padding: var(--space-lg);
+            border-radius: var(--radius-medium);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .testimonial-card .quote {
+            font-size: var(--body-large);
+            font-style: italic;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-md);
+            position: relative;
+        }
+
+        .testimonial-card .quote::before {
+            content: '“';
+            font-size: 3em;
+            color: var(--color-primary-modern-blue);
+            position: absolute;
+            top: -0.5em;
+            left: -0.2em;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+            border: 2px solid var(--color-primary-modern-blue);
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            margin-bottom: var(--space-xs);
+            color: var(--color-primary-modern-blue);
+        }
+
+        .author-info p {
+            color: var(--color-text-muted);
+            font-size: var(--body-small);
+        }
+
+        /* FAQ Section */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: var(--space-md);
+            border-radius: var(--radius-medium);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .faq-item summary {
+            background-color: rgba(26, 26, 46, 0.6); /* Slightly darker than glass-card base */
+            padding: var(--space-md) var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: var(--body-large);
+            color: var(--color-text-light);
+            transition: background-color var(--transition-duration-fast) var(--transition-easing);
+            border-radius: var(--radius-medium); /* For closed state */
+        }
+
+        .faq-item summary:hover {
+            background-color: rgba(26, 26, 46, 0.8);
+        }
+
+        .faq-item details[open] summary {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .faq-item summary::marker {
+            display: none; /* Hide default marker */
+        }
+
+        .faq-item summary .icon {
+            width: 24px;
+            height: 24px;
+            color: var(--color-primary-modern-blue);
+            transition: transform var(--transition-duration-standard) var(--transition-easing);
+        }
+
+        .faq-item details[open] summary .icon {
+            transform: rotate(45deg); /* Plus to X */
+        }
+
+        .faq-content {
+            background-color: rgba(26, 26, 46, 0.8); /* Slightly lighter than summary */
+            padding: var(--space-md) var(--space-lg);
+            color: var(--color-text-muted);
+            font-size: var(--body-regular);
+            border-bottom-left-radius: var(--radius-medium);
+            border-bottom-right-radius: var(--radius-medium);
+            /* For smooth height transition on details element */
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height var(--transition-duration-standard) var(--transition-easing) ease-out;
+        }
+
+        .faq-item details[open] .faq-content {
+            max-height: 500px; /* Arbitrarily large value for smooth transition */
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .contact-info p {
+            font-size: var(--body-large);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-lg);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            color: var(--color-text-light);
+            font-size: var(--body-regular);
+        }
+
+        .contact-detail-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-primary-modern-blue);
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background-color: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(141, 153, 174, 0.2);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-medium);
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-sm);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text-light);
+            font-size: var(--body-small);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-md);
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--color-secondary-cool-gray);
+            border-radius: var(--radius-small);
+            color: var(--color-text-light);
+            font-family: var(--font-body);
+            font-size: var(--body-regular);
+            transition: border-color var(--transition-duration-fast) var(--transition-easing),
+                        box-shadow var(--transition-duration-fast) var(--transition-easing);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--color-text-muted);
+            opacity: 0.7;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary-modern-blue);
+            box-shadow: var(--shadow-inner), 0 0 0 3px rgba(74, 144, 226, 0.2); /* Focus glow */
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            margin-top: var(--space-md);
+            width: auto;
+            align-self: flex-start;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #101020; /* Slightly darker background */
+            padding: var(--space-lg) 0; /* Mobile */
+            color: var(--color-text-muted);
+            font-size: var(--caption);
+            text-align: center;
+        }
+        @media (min-width: 768px) { .footer { padding: var(--space-xl) 0; } }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .footer .container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-md);
+        }
+
+        .footer-nav a {
+            color: var(--color-text-muted);
+            font-size: var(--body-small);
+            font-weight: 500;
+        }
+
+        .footer-nav a:hover {
+            color: var(--color-primary-modern-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .social-links a {
+            color: var(--color-text-muted);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            color: var(--color-primary-modern-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Accessibility: Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .btn, .glass-card, .header, .nav-menu a::after, .hamburger span,
+            .mobile-menu, .faq-item summary, .faq-item summary .icon,
+            .faq-content, .form-group input, .form-group textarea, .social-links a,
+            .animate-on-scroll {
+                transition: none !important;
+                animation: none !important;
+            }
+            .animate-on-scroll {
+                opacity: 1;
+                transform: none;
+            }
+            .hero-background {
+                filter: none; /* Remove blur */
+                animation: none;
+                background: var(--color-background-deep-indigo); /* Static background */
+            }
+        }
+
+        /* Print Stylesheet */
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+                font-family: serif;
+            }
+            .header, .footer, .hero-background, .btn, .hamburger, .mobile-menu {
+                display: none !important;
+            }
+            .section {
+                padding: 1cm 0;
+                border-bottom: 1px solid #eee;
+            }
+            .section-title {
+                color: #000;
+                text-align: left;
+                margin-bottom: 0.5cm;
+            }
+            h1, h2, h3, h4 {
+                color: #000;
+                page-break-after: avoid;
+            }
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            .hero {
+                min-height: auto;
+                padding-top: 0;
+            }
+            .hero-content {
+                text-align: left;
+                padding: 0;
+            }
+            .glass-card, .pricing-card, .testimonial-card, .faq-item, .contact-form {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                box-shadow: none;
+                page-break-inside: avoid;
+                margin-bottom: 1em;
+            }
+            .faq-item summary {
+                background-color: #eee;
+                color: #333;
+            }
+            .faq-content {
+                background-color: #f9f9f9;
+                color: #555;
+                max-height: none !important; /* Ensure content is visible */
+            }
+            .form-group input, .form-group textarea {
+                background-color: #fff;
+                border-color: #ccc;
+                color: #000;
+            }
+            a {
+                color: #007bff;
+                text-decoration: underline;
+            }
+            .logo {
+                color: #000;
+            }
+            .logo svg {
+                fill: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#hero" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3.53-2.64 6.4-6.3 6.92V21h-2v-3.08C6.34 17.4 3.7 14.53 3.7 11H2c0 3.98 3.15 7.22 7 7.74V21h6v-2.26c3.85-.52 7-3.76 7-7.74h-1.7z"/>
+                </svg>
+                VocalPro
+            </a>
+            <nav class="nav-menu">
+                <a href="#hero">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="#hero">Home</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content animate-on-scroll" data-animate="fade-in-up">
+                <h1 class="gradient-text">Your Voice, Amplified by AI.</h1>
+                <h3>Transform how you communicate, operate, and connect. VocalPro delivers precision voice AI solutions for the modern professional.</h3>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Get Started Today</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section section-pattern">
+            <div class="container">
+                <h2 class="section-title text-center animate-on-scroll" data-animate="fade-in-up">Unleash the Power of Intelligent Voice</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
+                        <div class="icon">🛠️</div>
+                        <h3>Precision Command & Control</h3>
+                        <p class="body-regular text-muted">For craftsmen, execute complex tasks with voice commands, keeping hands free and focus sharp. Reduce errors and boost efficiency on the job site.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
+                        <div class="icon">🩺</div>
+                        <h3>Streamlined Clinical Documentation</h3>
+                        <p class="body-regular text-muted">Healthcare professionals can dictate notes, update records, and manage appointments with unparalleled accuracy, freeing up valuable time for patient care.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.3">
+                        <div class="icon">🗣️</div>
+                        <h3>Natural Language Understanding</h3>
+                        <p class="body-regular text-muted">Our AI understands context and nuance, providing intelligent responses and actions, making interactions feel intuitive and human-like.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.4">
+                        <div class="icon">🔒</div>
+                        <h3>Secure & Compliant Data Handling</h3>
+                        <p class="body-regular text-muted">Built with robust security protocols and HIPAA compliance in mind, ensuring your sensitive data and patient information remain protected.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.5">
+                        <div class="icon">📈</div>
+                        <h3>Actionable Insights & Analytics</h3>
+                        <p class="body-regular text-muted">Gain valuable insights from voice data to optimize workflows, identify trends, and make data-driven decisions for your business or practice.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.6">
+                        <div class="icon">🌐</div>
+                        <h3>Seamless Integration</h3>
+                        <p class="body-regular text-muted">VocalPro integrates effortlessly with your existing tools and software, minimizing disruption and maximizing your current technology investments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="section">
+            <div class="container text-center">
+                <h2 class="section-title animate-on-scroll" data-animate="fade-in-up">Our Impact in Numbers</h2>
+                <div class="features-grid"> <!-- Reusing grid for layout -->
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
+                        <div class="icon text-accent" style="font-size: 64px;">
+                            <span class="counter-number" data-counter-target="847">0</span>+
+                        </div>
+                        <h3>Clients Served</h3>
+                        <p class="body-regular text-muted">Across 23 countries, transforming operations.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
+                        <div class="icon text-accent" style="font-size: 64px;">
+                            <span class="counter-number" data-counter-target="35">0</span>%
+                        </div>
+                        <h3>Efficiency Boost</h3>
+                        <p class="body-regular text-muted">Average time saved on documentation and tasks.</p>
+                    </div>
+                    <div class="feature-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.3">
+                        <div class="icon text-accent" style="font-size: 64px;">
+                            <span class="counter-number" data-counter-target="99.8">0</span>%
+                        </div>
+                        <h3>Voice Accuracy</h3>
+                        <p class="body-regular text-muted">Unmatched precision in speech recognition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section section-pattern">
+            <div class="container">
+                <h2 class="section-title text-center animate-on-scroll" data-animate="fade-in-up">Flexible Plans for Every Professional</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">$</span><span class="text-accent">49</span><span class="period">/month</span>
+                        </div>
+                        <p class="body-small text-muted">Ideal for individual professionals beginning their AI journey.</p>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Basic Voice Command
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                10 hours of transcription
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Standard Security
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Email Support
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Choose Starter</a>
+                    </div>
+
+                    <div class="pricing-card glass-card highlight animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="currency">$</span><span class="text-accent">99</span><span class="period">/month</span>
+                        </div>
+                        <p class="body-small text-muted">The ultimate solution for growing practices and busy workshops.</p>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Advanced Voice AI
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Unlimited transcription
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                HIPAA Compliant Security
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                CRM/EHR Integration
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Priority Support
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Choose Pro</a>
+                    </div>
+
+                    <div class="pricing-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.3">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="currency">$</span><span class="text-accent">Custom</span>
+                        </div>
+                        <p class="body-small text-muted">Tailored solutions for large organizations with unique needs.</p>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Fully Customizable AI
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Dedicated Account Manager
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                On-premise deployment options
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                Advanced Analytics & Reporting
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                24/7 Premium Support
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2 class="section-title text-center animate-on-scroll" data-animate="fade-in-up">What Our Clients Are Saying</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
+                        <p class="quote body-large">"VocalPro has revolutionized how my team manages patient records. The accuracy is astounding, and we've cut documentation time by nearly 40%, allowing us to focus more on patient care. Truly indispensable."</p>
+                        <div class="testimonial-author">
+                            <img loading="lazy" src="https://via.placeholder.com/60/4A90E2/E0E0E0?text=JD" alt="Dr. Jane Doe">
+                            <div class="author-info">
+                                <h4>Dr. Jane Doe</h4>
+                                <p class="body-small text-muted">Chief of Staff, Evergreen Medical Group</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
+                        <p class="quote body-large">"As a custom furniture maker, my hands are always busy. VocalPro's voice commands let me control my tools, access blueprints, and even order materials without ever breaking my workflow. It's a game-changer for productivity."</p>
+                        <div class="testimonial-author">
+                            <img loading="lazy" src="https://via.placeholder.com/60/FFD700/1A1A2E?text=MK" alt="Mark Kincaid">
+                            <div class="author-info">
+                                <h4>Mark Kincaid</h4>
+                                <p class="body-small text-muted">Master Craftsman, Kincaid Woodworks</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.3">
+                        <p class="quote body-large">"Implementing VocalPro was seamless. Our nurses now spend less time on administrative tasks and more time with patients. The secure, compliant platform gives us peace of mind, and the support has been exceptional."</p>
+                        <div class="testimonial-author">
+                            <img loading="lazy" src="https://via.placeholder.com/60/8D99AE/1A1A2E?text=SA" alt="Sarah Adams">
+                            <div class="author-info">
+                                <h4>Sarah Adams</h4>
+                                <p class="body-small text-muted">Clinic Administrator, Harmony Health</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card animate-on-scroll" data-animate="fade-in-up" data-delay="0.4">
+                        <p class="quote body-large">"From inventory management to quality control, VocalPro has integrated perfectly into our manufacturing process. The ability to log data and trigger actions by voice has drastically improved our operational efficiency."</p>
+                        <div class="testimonial-author">
+                            <img loading="lazy" src="https://via.placeholder.com/60/4A90E2/E0E0E0?text=RT" alt="Robert Thompson">
+                            <div class="author-info">
+                                <h4>Robert Thompson</h4>
+                                <p class="body-small text-muted">Operations Manager, Precision Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-pattern">
+            <div class="container">
+                <h2 class="section-title text-center animate-on-scroll" data-animate="fade-in-up">Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <details class="faq-item animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
+                        <summary>
+                            <h3>What industries does VocalPro serve?</h3>
+                            <span class="icon">+</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>VocalPro is specifically designed to empower professionals in hands-on fields. Our primary focus is on craftsmen (e.g., construction, manufacturing, artisans) and healthcare professionals (e.g., doctors, nurses, therapists), but our adaptable AI can be customized for other specialized sectors.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
+                        <summary>
+                            <h3>How secure is my data with VocalPro?</h3>
+                            <span class="icon">+</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>Data security is paramount. We employ end-to-end encryption, multi-factor authentication, and adhere to strict data privacy regulations, including HIPAA for our healthcare clients. Our infrastructure is regularly audited to ensure the highest standards of protection.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item animate-on-scroll" data-animate="fade-in-up" data-delay="0.3">
+                        <summary>
+                            <h3>Can VocalPro integrate with my existing software?</h3>
+                            <span class="icon">+</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>Absolutely. VocalPro is built with robust API capabilities, allowing seamless integration with a wide range of existing CRM, EHR, ERP, and project management systems. Our team provides support to ensure a smooth integration process tailored to your specific tech stack.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item animate-on-scroll" data-animate="fade-in-up" data-delay="0.4">
+                        <summary>
+                            <h3>What kind of support can I expect?</h3>
+                            <span class="icon">+</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>We offer tiered support based on your plan. All clients receive email support, while Pro and Enterprise plans include priority support and dedicated account managers, respectively. Our knowledge base and tutorials are also available 24/7 for self-service assistance.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title text-center animate-on-scroll" data-animate="fade-in-up">Ready to Elevate Your Voice?</h2>
+                <div class="contact-grid">
+                    <div class="contact-info animate-on-scroll" data-animate="fade-in-up" data-delay="0.1">
+                        <p class="body-large">Have questions or ready to discuss a custom solution? Reach out to our expert team. We're here to help you harness the power of Voice AI.</p>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                <span>info@vocalpro.com</span>
+                            </div>
+                            <div class="contact-detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-detail-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <span>123 AI Avenue, Tech City, TX 78701</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form animate-on-scroll" data-animate="fade-in-up" data-delay="0.2">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Inquiry about Pro Plan">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#hero" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3.53-2.64 6.4-6.3 6.92V21h-2v-3.08C6.34 17.4 3.7 14.53 3.7 11H2c0 3.98 3.15 7.22 7 7.74V21h6v-2.26c3.85-.52 7-3.76 7-7.74h-1.7z"/>
+                </svg>
+                VocalPro
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.418.712-.676 1.543-.676 2.43 0 1.61.871 3.03 2.183 3.87-.807-.025-1.56-.248-2.229-.616v.086c0 3.22 2.3 5.893 5.344 6.5-.562.154-1.163.211-1.762.083.844 2.62 3.29 4.546 6.192 4.585-2.278 1.79-5.137 2.862-8.235 2.862-.534 0-1.05-.034-1.56-.092 2.922 1.902 6.005 3.008 9.223 3.008 11.092 0 17.171-9.188 17.171-17.171 0-.26-.006-.519-.014-.778 1.207-.875 2.254-1.96 3.079-3.219z"/></svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+            <p class="copyright body-small">&copy; 2023 VocalPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll & Active Nav Link Highlighting
+            const navLinks = document.querySelectorAll('.nav-menu a, .mobile-menu a');
+            const sections = document.querySelectorAll('section');
+            const header = document.querySelector('.header');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            const activateNavLink = (id) => {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${header.offsetHeight}px 0px -50% 0px`, // Adjust rootMargin to account for fixed header
+                threshold: 0,
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        activateNavLink(entry.target.id);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - header.offsetHeight, // Adjust scroll position
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                            hamburger.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    }
+                });
+            });
+
+            // Mobile Menu Toggle
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Scroll-triggered Fade-in/Slide-up Animations
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.dataset.delay || '0';
+                        entry.target.style.transitionDelay = delay + 's';
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -10% 0px', // Trigger when 10% of element is visible
+                threshold: 0.1
+            });
+
+            animateElements.forEach(el => animationObserver.observe(el));
+
+            // Animated Counter Numbers
+            const counterElements = document.querySelectorAll('.counter-number');
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.dataset.counterTarget);
+                        const duration = 2000; // 2 seconds
+                        const start = 0;
+                        let startTime = null;
+
+                        const animate = (currentTime) => {
+                            if (!startTime) startTime = currentTime;
+                            const progress = Math.min((currentTime - startTime) / duration, 1);
+                            const value = Math.floor(progress * target);
+                            entry.target.textContent = value;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                entry.target.textContent = target; // Ensure final value is exact
+                            }
+                        };
+                        requestAnimationFrame(animate);
+                        observer.unobserve(entry.target); // Stop observing once counted
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.5
+            });
+
+            counterElements.forEach(el => counterObserver.observe(el));
+
+            // FAQ Accordion smooth height transition (for details/summary)
+            document.querySelectorAll('.faq-item details').forEach(details => {
+                details.addEventListener('toggle', () => {
+                    const content = details.querySelector('.faq-content');
+                    if (details.open) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                });
+                // Set initial max-height for closed state
+                const content = details.querySelector('.faq-content');
+                if (!details.open) {
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "project_name": "vocalpro-landing-page",
+  "description": "A premium landing page for VocalPro, a Voice AI agency, targeting craftsmen and healthcare professionals.",
+  "type": "landing-page",
+  "style": "modern",
+  "color_scheme": "dark",
+  "sections": [
+    "hero",
+    "features",
+    "pricing",
+    "testimonials",
+    "faq",
+    "contact",
+    "footer"
+  ],
+  "features": [
+    "contact-form",
+    "animations",
+    "responsive",
+    "seo"
+  ],
+  "target_audience": "Craftsmen and healthcare professionals.",
+  "reference_urls": [
+    "https://elevenlabs.io",
+    "https://bland.ai"
+  ],
+  "framework": "nextjs",
+  "original_prompt": "Premium Landing Page fuer eine Voice AI Agency namens VocalPro. Dunkles Theme mit Blau-Violett Gradient. Zielgruppe: Handwerker und Healthcare. Sections: Hero mit animiertem Hintergrund, 3 Services (Voice Receptionist, Appointment Booking AI, Customer Support Bot), Pricing (3 Tiers: Starter 99/mo, Pro 249/mo, Enterprise custom), Testimonials von echten Kunden, FAQ, Contact Form. Inspiriert von elevenlabs.io und bland.ai",
+  "hero_image": "hero-bg.png"
+}
