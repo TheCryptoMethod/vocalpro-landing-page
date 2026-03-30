@@ -1,0 +1,44 @@
+{
+  "prompt": "Premium Landing Page fuer eine Voice AI Agency namens VocalPro. Dunkles Theme mit Blau-Violett Gradient. Zielgruppe: Handwerker und Healthcare. Sections: Hero mit animiertem Hintergrund, 3 Services (Voice Receptionist, Appointment Booking AI, Customer Support Bot), Pricing (3 Tiers: Starter 99/mo, Pro 249/mo, Enterprise custom), Testimonials von echten Kunden, FAQ, Contact Form. Inspiriert von elevenlabs.io und bland.ai",
+  "brief": {
+    "project_name": "vocalpro-landing-page",
+    "description": "A premium landing page for VocalPro, a Voice AI agency, targeting craftsmen and healthcare professionals.",
+    "type": "landing-page",
+    "style": "modern",
+    "color_scheme": "dark",
+    "sections": [
+      "hero",
+      "features",
+      "pricing",
+      "testimonials",
+      "faq",
+      "contact",
+      "footer"
+    ],
+    "features": [
+      "contact-form",
+      "animations",
+      "responsive",
+      "seo"
+    ],
+    "target_audience": "Craftsmen and healthcare professionals.",
+    "reference_urls": [
+      "https://elevenlabs.io",
+      "https://bland.ai"
+    ],
+    "framework": "nextjs",
+    "original_prompt": "Premium Landing Page fuer eine Voice AI Agency namens VocalPro. Dunkles Theme mit Blau-Violett Gradient. Zielgruppe: Handwerker und Healthcare. Sections: Hero mit animiertem Hintergrund, 3 Services (Voice Receptionist, Appointment Booking AI, Customer Support Bot), Pricing (3 Tiers: Starter 99/mo, Pro 249/mo, Enterprise custom), Testimonials von echten Kunden, FAQ, Contact Form. Inspiriert von elevenlabs.io und bland.ai",
+    "hero_image": "hero-bg.png"
+  },
+  "project_dir": "C:\\Visualstudios\\WebsiteFactory\\output\\vocalpro-landing-page",
+  "qa": {
+    "passed": true,
+    "score": 10,
+    "max_score": 10,
+    "issues": [],
+    "html_size": 67795
+  },
+  "url": "deploy_failed: [WinError 2] Das System kann die angegebene Datei nicht finden",
+  "duration": 125.7,
+  "timestamp": "2026-03-30T20:43:45.598345"
+}
